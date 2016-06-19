@@ -1,4 +1,3 @@
 jspm_packages/
 node_modules/
 chrome-extension/base.js*
-mashape_apikey.js
