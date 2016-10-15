@@ -9,7 +9,7 @@ function getGameTitle (game) {
 }
 
 function fetchGames (games) {
-  games.map(game => {
+  return games.map(game => {
     const gameTitle = getGameTitle(game)
     if (gameTitle) {
       fetchRating(gameTitle)
@@ -19,10 +19,15 @@ function fetchGames (games) {
   })
 }
 
-const timer = setInterval(() => {
-  const games = document.querySelectorAll(gamesSelector)
-  if (games.length) {
-    fetchGames([...games])
-    clearInterval(timer)
-  }
-}, 200)
+function waitTheDOM () {
+  setTimeout(() => {
+    const games = document.querySelectorAll(gamesSelector)
+    if (games.length) {
+      fetchGames([...games])
+    }
+  }, 3000)
+}
+
+waitTheDOM()
+
+window.onhashchange = waitTheDOM
