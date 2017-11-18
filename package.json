@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Chrome Extension that shows you the IGN rating of the games in the PS store.",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack && cross-zip chrome-extension",
     "postinstall": "webpack"
   },
   "repository": {
@@ -27,6 +27,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
+    "cross-zip-cli": "^1.0.0",
     "webpack": "^3.8.1"
   },
   "devDependencies": {
