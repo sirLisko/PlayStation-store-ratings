@@ -18,6 +18,7 @@
     "chrome-extension"
   ],
   "author": "Luca Lischetti <sirlisko@gmail.com> (http://sirlisko.com)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sirLisko/PlayStation-store-ratings/issues"
   },
