@@ -1,29 +1,27 @@
 import fetchRating from './fetchRating'
 import addRating from './addRating'
 
-const gamesSelector = '.cellGridGameStandard'
-const titleSelector = '.cellTitle'
-
-function getGameTitle (game) {
-  return game.querySelector(titleSelector).innerHTML
-}
+const titleSelector = '.grid-cell__title'
 
 function fetchGames (games) {
   return games.map(game => {
-    const gameTitle = getGameTitle(game)
+    const gameTitle = game.innerHTML
     if (gameTitle) {
       fetchRating(gameTitle)
-        .then(score => addRating(game, score[0]))
-        .catch()
+        .then(score => {
+          addRating(game, score[0])
+        })
+        .catch(() => {})
     }
   })
 }
 
 function waitTheDOM () {
-  setTimeout(() => {
-    const games = document.querySelectorAll(gamesSelector)
+  const isGameLoaded = setInterval(() => {
+    const games = document.querySelectorAll(titleSelector)
     if (games.length) {
       fetchGames([...games])
+      clearInterval(isGameLoaded)
     }
   }, 3000)
 }
