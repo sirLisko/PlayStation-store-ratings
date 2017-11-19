@@ -1,7 +1,8 @@
-/*globals fetch, Headers*/
+/* globals fetch, Headers */
+
+import ratingAPIkey from '../mashape_apikey'
 
 const ratingAPIurl = 'https://videogamesrating.p.mashape.com/get.php?count=1&game='
-import ratingAPIkey from '../mashape_apikey'
 
 const myHeaders = new Headers({
   'Accept': 'application/json',
