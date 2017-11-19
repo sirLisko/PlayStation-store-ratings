@@ -28,7 +28,7 @@ A Mashape free API key is needed. For more info on how to get one https://market
 Add your API key to `mashape_apikey.js`.
 
 ### Install
-1. Open `chrome://chrome/extensions/`.
+1. Open `chrome://extensions/`.
 2. Drag and drop the folder `chrome-extension` in the browser window.
 3. Enjoy :)
 
